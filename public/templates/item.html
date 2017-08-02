@@ -1,0 +1,94 @@
+<div>
+    <h1>Add New Application</h1>
+    <br />
+</div>
+
+
+<form ng-submit="submit()" ng-controller="MainController">
+    <div class="panel ">
+        <div class="form-group row" >
+            <label for="ProfileID" class="col-sm-2 col-form-label">Profile ID</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="profileid" placeholder="Profile ID" ng-model="inputForm.profileid" ng-required="true">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="firstname" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="firstname" placeholder="First Name" ng-model="inputForm.firstname">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lastname" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="lastname" placeholder="Last Name" ng-model="inputForm.lastname">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="suffix" class="col-sm-2 col-form-label">Suffix</label>
+            <div class="col-xs-1">
+                <input type="text" class="form-control" id="suffix" placeholder="Suffix" ng-model="inputForm.suffix">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="phone" class="col-sm-2 col-form-label">Phone Number</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="phone" placeholder="Phone" ng-model="inputForm.phone"  ng-minlength = "10" ng-maxlength = "10">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="employer" class="col-sm-2 col-form-label">Employer</label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" id="employer" placeholder="Employer" ng-model="inputForm.employer">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="dateofhire" class="col-sm-2 col-form-label">Date of Hire</label>
+            <div class="col-sm-4">
+                <input type="date" class="form-control" id="dateofhire" ng-model="inputForm.dateofhire">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="receiptdate" class="col-sm-2 col-form-label">Receipt Date</label>
+            <div class="col-sm-4">
+                <input type="date" class="form-control" id="receiptdate" ng-model="inputForm.receiptdate">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="requesttype" class="col-sm-2 col-form-label">Request Type</label>
+            <div class="col-sm-4">
+                <select ng-model="inputForm.requesttype" ng-options="item for item in requesttypes" class="form-control" id="requesttype"></select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="status" class="col-sm-2 col-form-label">Status</label>
+            <div class="col-sm-4">
+                <!--<select ng-model="inputForm.status" ng-options="y.status for (x, y) in statuses" class="form-control" ng-true-value="inputForm.status"></select>--> 
+                <select ng-model="inputForm.status" ng-options="x.status for x in statusList" class="form-control" id="status">
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="comment" class="col-sm-2 col-form-label">Comment</label>
+            <div class="col-sm-4">
+                <textarea ng-model="inputForm.comment" class="form-control" id="comment" placeholder="Comment"></textarea>
+            </div>
+        </div>
+
+        <!--<div class="form-group row">
+            <label for="document" class="col-sm-2 col-form-label">Attach Document</label>
+            <div class="col-lg-10">
+                <input type="file" id="document" class="custom-file-input" ng-model="inputForm.document">                
+            </div>
+        </div>-->
+       
+        <div>
+
+            <button type="button" class="btn btn-danger" ui-sref="list">Cancel</button>
+            <input type="submit" id="submit" class="btn btn-success" value="Save" />
+        </div>
+
+    </div>
+
+
+</form>

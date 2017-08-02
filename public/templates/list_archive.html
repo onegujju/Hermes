@@ -1,0 +1,107 @@
+<!--<div class="btn-toolbar text-center well">
+    <button type="button" class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2" ui-sref="item">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> NEW APPLICATION
+    </button>
+    <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1"></div>
+    <button type="button" class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2">
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> SEARCH APPLICATION        
+    </button>
+    <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1 border"></div>
+    <button type="button" class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2">
+        <span class="glyphicon glyphicon-time" aria-hidden="true"></span> VIEW ARCHIVED APPLICATIONS
+    </button>    
+</div>-->
+
+
+
+<!--<div >
+    
+
+    <a href="#" class="navbar-left"><img src="HermesLogo.ico"></a>
+
+    <button type="button" class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2" ui-sref="item">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> NEW APPLICATION
+    </button>
+    <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1 border"></div>
+    <button type="button" class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2">
+        <span class="glyphicon glyphicon-time" aria-hidden="true"></span> VIEW ARCHIVED APPLICATIONS
+    </button>
+
+
+</div>
+
+<br />
+<hr />-->
+
+    <!--<table class="table table-striped" ng-init="fetchAll()">
+        <thead>
+            <tr>
+                <th>Profile ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(key, value) in items">
+                <td><a href="" ui-sref="item({documentId: key})">{{value.profileid}}</a></td>
+                <td>{{value.firstname}}</td>
+                <td>{{value.lastname}}</td>
+                <td>{{value.phone}}</td>
+                <td>{{value.status}}</td>
+                <td><a href="" ng-click="delete(key)">archive</a></td>
+            </tr>
+        </tbody>
+    </table>-->
+
+<div>
+    <h1>List of Archived Applications</h1>
+    <br />
+</div>
+
+
+<div ng-controller="MainController as showCaseArchive">    
+    <table datatable="ng" dt-options="showCaseArchive.dtOptions" dt-column-defs="showCaseArchive.dtColumnDefs" class="table table-striped table-hover" ng-init="fetchArchive()">
+        <thead > 
+            <tr>
+                <th>Profile ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Status</th>      
+                <th>Action</th>          
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(key, value) in items">
+                <td><a href="" ui-sref="item_archive({documentId: key})">{{value.profileid}}</a></td>
+                <td>{{value.firstname}}</td>
+                <td>{{value.lastname}}</td>
+                <td>{{value.phone}}</td>
+                <td>{{value.status}}</td>
+                <td>
+                    <button type="button" class="btn btn-xs btn-danger"
+                            ng-bootbox-confirm="Are you sure you want to restore this application?"
+                            ng-bootbox-confirm-action="restore(key)"
+                            ng-bootbox-confirm-action-cancel="">
+                        Restore
+                    </button>
+                </td>
+                <!--<td><button type="button" class="btn btn-danger btn-color btn-bg-color btn-group-xs" 
+                            ng-bootbox-confirm="Are you sure you want to archive this?"
+                       ng-bootbox-confirm-action="archive(key)" 
+                       ng-bootbox-confirm-action-cancel="">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 
+                    </button>
+                </td>-->
+                <!--<td><a href=""  ng-bootbox-confirm="Are you sure you want to archive this?"
+                       ng-bootbox-confirm-action="delete(key)" 
+                       ng-bootbox-confirm-action-cancel="">Archive</a>
+                </td>-->
+            </tr>
+        </tbody>
+    </table>
+</div>
+

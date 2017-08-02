@@ -1,0 +1,11 @@
+1. Download and install Couchbase 4.6.2
+2. Create bucket named Hermes
+3. Create primary key index on Hermes   (CREATE PRIMARY INDEX `#primary` ON `Hermes`)
+4. Change config.json  to point to Couchbase server 
+5. Install node.js https://nodejs.org/en/
+6. Copy source code to directory
+7. Run npm install
+8. Run npm install twilio
+9. Run node app.js
+
+
